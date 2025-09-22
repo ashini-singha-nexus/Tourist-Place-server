@@ -1,12 +1,12 @@
 
-from sqlmodel import SQLModel
+from sqlmodel import SQLModel, Field
 import uuid
 from datetime import datetime
 
 class PlaceBase(SQLModel):
-    title: str
-    description: str
-    location: str
+    title: str = Field(min_length=3, max_length=50)
+    description: str = Field(min_length=10, max_length=500)
+    location: str = Field(min_length=3, max_length=100)
 
 class PlaceCreate(PlaceBase):
     pass
