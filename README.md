@@ -107,3 +107,11 @@ Then, you'll need to configure `migrations/env.py` to point to your SQLModel mod
 - `GET /places/{id}`: Get a single place.
 - `PUT /places/{id}`: Update a place (requires authentication, only creator can update).
 - `DELETE /places/{id}`: Delete a place (requires authentication, only creator can delete).
+
+## ER Diagram
+
+DBML Code Link: [https://dbdiagram.io/d/dbml-101-68b1f53a777b52b76c392d3e](https://dbdiagram.io/d/dbml-101-68b1f53a777b52b76c392d3e)
+
+ER Diagram Image:
+
+![ER Diagram](static/images/er_diagram.png)

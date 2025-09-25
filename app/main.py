@@ -5,6 +5,7 @@ from app.database import create_db_and_tables
 import time
 import logging
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -33,6 +34,9 @@ app.add_middleware(
     allow_methods=["*"],              # or specify: ["GET", "POST", "PUT", "DELETE"]
     allow_headers=["*"],              # or specify: ["Authorization", "Content-Type"]
 )
+
+# Mount static folder
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.on_event("startup")
 def on_startup():
